@@ -3,6 +3,7 @@ const UserRole = require("../models").UserRole;
 const Role = require("../models").Role;
 const message = require("../models").message;
 const Room = require("../models").Room;
+const { Op } = require("sequelize");
 exports.insertNewMessage = async function (data) {
     const sender = await User.findOne({
         where: {

@@ -8,7 +8,7 @@ const bodyParser = require("body-parser")
 
 const cors = require('cors')
 const {setHeaders} =require("./middleware/auth")
-const {insertNewMessage} = require("./socket/socket")
+const {insertNewMessage,deleteMessage} = require("./socket/socket")
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
@@ -25,7 +25,7 @@ app.use(router)
 io.on('connection',socket=>{
     console.log("connect")
     socket.on("newMessage",(data)=>{insertNewMessage(data)})
-    socket.on('disconnect', () => {console.log("user Disconnected") });
+    socket.on('disconnect', () => {console.log("user Disconnected")});
 })
 
 server.listen(port,()=>{
