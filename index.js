@@ -5,10 +5,10 @@ const http = require('http');
 const socketIo = require('socket.io');
 const router = require('./router')
 const bodyParser = require("body-parser")
-const polygon = require("./method/map")
+
 const cors = require('cors')
 const {setHeaders} =require("./middleware/auth")
-const {insertNewMessage} = require("./controller/soket")
+const {insertNewMessage} = require("./socket/socket")
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
@@ -24,7 +24,6 @@ app.use(router)
 
 io.on('connection',socket=>{
     console.log("connect")
-   // socket.emit('sendPolygon', { data:polygon.polygon});
     socket.on("newMessage",(data)=>{insertNewMessage(data)})
     socket.on('disconnect', () => {console.log("user Disconnected") });
 })

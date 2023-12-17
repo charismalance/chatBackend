@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {chatOfRoom} = require("../controller/soket")
+const {chatOfRoom} = require("../controller/chatController")
 
 router.post("/findChat",chatOfRoom)
 

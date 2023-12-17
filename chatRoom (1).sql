@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2023 at 06:04 PM
+-- Generation Time: Dec 17, 2023 at 09:16 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.28
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tracker`
+-- Database: `chatRoom`
 --
 
 -- --------------------------------------------------------
@@ -43,8 +43,7 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `message`, `senderId`, `reciverId`, `roomId`, `createdAt`, `updatedAt`) VALUES
-(4, ' Show me the money!', 2, 3, 1, '2023-12-15 16:58:39', '2023-12-15 16:58:39'),
-(5, ' Show me the money!', 2, 3, 1, '2023-12-15 16:58:39', '2023-12-15 16:58:39');
+(1, 'hello World', 1, 1, 1, '2023-12-17 11:46:19', '2023-12-17 11:46:19');
 
 -- --------------------------------------------------------
 
@@ -64,8 +63,8 @@ CREATE TABLE `Roles` (
 --
 
 INSERT INTO `Roles` (`id`, `title`, `createdAt`, `updatedAt`) VALUES
-(1, 'admin', '2023-12-06 20:28:34', '2023-12-06 20:28:34'),
-(2, 'user', '2023-12-06 20:28:34', '2023-12-06 20:28:34');
+(1, 'admin', '2023-12-17 11:45:02', '2023-12-17 11:45:02'),
+(2, 'user', '2023-12-17 11:45:02', '2023-12-17 11:45:02');
 
 -- --------------------------------------------------------
 
@@ -85,8 +84,8 @@ CREATE TABLE `Rooms` (
 --
 
 INSERT INTO `Rooms` (`id`, `title`, `createdAt`, `updatedAt`) VALUES
-(1, '  گروه 1', '2023-12-15 19:11:29', '2023-12-15 19:11:29'),
-(2, 'گروه 2', '2023-12-15 19:11:29', '2023-12-15 19:11:29');
+(1, 'classRoom', '2023-12-17 11:41:23', '2023-12-17 11:41:23'),
+(2, 'frinds', '2023-12-17 11:41:23', '2023-12-15 19:11:29');
 
 -- --------------------------------------------------------
 
@@ -123,6 +122,13 @@ CREATE TABLE `UserRoles` (
   `updatedAt` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `UserRoles`
+--
+
+INSERT INTO `UserRoles` (`id`, `userId`, `roleId`, `createdAt`, `updatedAt`) VALUES
+(1, 1, 1, '2023-12-17 11:45:49', '2023-12-17 11:45:49');
+
 -- --------------------------------------------------------
 
 --
@@ -152,8 +158,7 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`id`, `username`, `email`, `password`, `phone`, `firstName`, `lastName`, `nationalCode`, `gender`, `verificationCode`, `verificationCodeExpireTime`, `isVerified`, `townshipId`, `createdAt`, `updatedAt`) VALUES
-(2, 'mayam@kordloo.com', 'mayam@kordloo.com', '$2b$10$4NU1ZdRMN57fT39CJe4hye3Qhxq77O10msCiH.8SOU7zFGsy87Edm', '09199559728', 'mayayam', 'kordlo', NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-14 17:03:16', '2023-12-14 17:03:16'),
-(3, 'mayam@kordloo.com', 'mayam@kordloo.com', '$2b$10$rU.r86.Dsmi45cJuBIeHJ./OahHe3r/umCR2ILe2kZQ8WUkma8w1S', '09199559728', 'mayayam', 'kordlo', NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-14 17:03:26', '2023-12-14 17:03:26');
+(1, 'mayam@kordloo.com', 'mayam@kordloo.com', '$2b$10$YFq7cn4s0v3o3ABtF8GJuubW4DGSaKB6VC4sfIk4.Odj3B6WPPd2e', '09199559728', 'mayayam', 'kordlo', NULL, NULL, NULL, NULL, NULL, NULL, '2023-12-17 08:10:49', '2023-12-17 08:10:49');
 
 --
 -- Indexes for dumped tables
@@ -209,7 +214,7 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `Roles`
@@ -233,7 +238,7 @@ ALTER TABLE `UserRoles`
 -- AUTO_INCREMENT for table `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
